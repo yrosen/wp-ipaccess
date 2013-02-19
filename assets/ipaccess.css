@@ -1,0 +1,56 @@
+/**
+ * IPAccess Wordpress Plugin
+ * Manages a list of IP addresses so that content can be shown only to allowed visitors.
+ *
+ * @author  Yudi Rosen <yudi42@gmail.com>
+ * @license MIT - http://yrosen.mit-license.org/
+ * @package IPAccess
+ * @version 1.0.0
+ */
+.ipaccess tbody tr:hover {
+	background-color: #E6F1ED;
+}
+
+.ipaccess a.icon {
+	display: inline-block;
+	height: 16px;
+	text-indent: -99999px;
+	width: 16px;
+}
+
+.ipaccess a.edit {
+	background: transparent url(./edit.png) top left no-repeat;
+}
+
+.ipaccess a.delete {
+	background: transparent url(./delete.png) top left no-repeat;
+}
+
+.ipaccess h2 {
+	margin-bottom: 10px;
+}
+
+.ipaccess form label {
+	display: inline-block;
+	margin-right: 5px;
+	text-align: right;
+	width: 100px;
+}
+
+/* Message boxes */
+.ipaccess .error {
+	border: 1px solid #C00;
+	font-weight: bold;
+	color: #C00;
+	margin: 10px 0;
+	padding: 8px;
+}
+
+.ipaccess .success {
+	background-color: #dff8df;
+	border: 1px solid #277c27;
+	font-weight: bold;
+	color: #277c27;
+	margin: 10px 0;
+	padding: 8px;
+}
