@@ -41,7 +41,7 @@ register_activation_hook(
 			/**
 			 * Small rant here: The max size of MySQL's unsigned int is 4294967295.
 			 * This is great, until you realize that the max number of IPv4 addresses
-			 * is 2^32 (4294967296) - ONE more than unsigned int an hold.
+			 * is 2^32 (4294967296) - ONE more than unsigned int can hold.
 			 * So we'll have to move up to bigint which is massive, in order to fix one
 			 * rather unlikely edge case.
 			 *
