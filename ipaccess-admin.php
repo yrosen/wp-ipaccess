@@ -72,4 +72,16 @@ add_action(
 		);
 	}
 );
+
+// Also, jQuery UI:
+add_action(
+	'admin_init', 
+	
+	function () {
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('jquery-ui-core');
+		wp_enqueue_script('jquery-ui-datepicker', plugins_url('/ipaccess/assets/ui/minified/jquery.ui.datepicker.min.js'), array('jquery', 'jquery-ui-core') );
+		wp_enqueue_style('jquery-ui-theme', plugins_url('/ipaccess/assets/ui/themes/smoothness/jquery-ui.css'));
+	}
+);
 ?>

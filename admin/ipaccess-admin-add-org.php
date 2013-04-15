@@ -67,6 +67,14 @@ if($_POST['submit']) {
 }
 ?>
 
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#ipaccess-expire-date').datepicker({
+			dateFormat : 'mm-dd-yy'
+		});
+	});
+</script>
+
 <div class="ipaccess wrap">
 	<div id="icon-ms-admin" class="icon32"></div>
 	<h2>IPAccess &raquo; Organizations &raquo; Add</h2>
@@ -88,6 +96,11 @@ if($_POST['submit']) {
 				<li>
 					<label for="ipaccess-contact-email">Contact Email: </label>
 					<input id="ipaccess-contact-email" name="ipaccess-contact-email" type="text" value="<?php echo $org['contact-email']; ?>" maxlength="255" size="50" />
+				</li>
+				
+				<li>
+					<label for="ipaccess-expire-date">Expiration Date: </label>
+					<input id="ipaccess-expire-date" name="ipaccess-expire-date" type="text" value="<?php echo $org['expire-date']; ?>" maxlength="255" size="50" />
 				</li>
 				
 				<li>
