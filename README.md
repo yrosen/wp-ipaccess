@@ -70,6 +70,6 @@ This plugin is written by Yudi Rosen (yudi42@gmail.com, @yudism, github.com/yros
 Uses icons from the Silk icon set by famfamfam - http://www.famfamfam.com/lab/icons/silk/
 
 
-BUG REPORTS, ETC
+BUG REPORTS, FEATURE REQUESTS, ETC
 --------------------------------
-GitHub.
+https://github.com/yrosen/wp-ipaccess
