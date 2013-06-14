@@ -19,16 +19,18 @@ register_activation_hook(
 
 		// Create the Orgs table:
 		$wpdb->query("
-		CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}ipaccess_orgs` (
-			`id` int(8) NOT NULL AUTO_INCREMENT,
-			`added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			`name` varchar(255) NOT NULL,
-			`contact_name` varchar(255) DEFAULT NULL,
-			`contact_email` varchar(255) DEFAULT NULL,
-			`number_of_ips` BIGINT NULL DEFAULT NULL,
-			PRIMARY KEY (`id`)
-		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-		");
+                CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}ipaccess_orgs` (
+                        `id` int(8) NOT NULL AUTO_INCREMENT,
+                        `added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                        `name` varchar(255) NOT NULL,
+                        `contact_name` varchar(255) DEFAULT NULL,
+                        `contact_email` varchar(255) DEFAULT NULL,
+                        `number_of_ips` BIGINT NULL DEFAULT NULL,
+                        `expires_on` int(16) NULL DEFAULT NULL,
+                        PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+                ");
+
 
 		// Create the Ranges table:
 		$wpdb->query("
