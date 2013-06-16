@@ -60,9 +60,21 @@ class IPAccess {
 		// Cookie isn't valid, so let's check database:
 		$ip = self::dottedToNumeric(self::getIP());
 
-		self::$db->query('SELECT * FROM ' . self::$db->prefix . "ipaccess_ranges WHERE {$ip} BETWEEN `start` AND `end`");
+		$ranges = self::$db->get_results('
+			SELECT r.*, o.expires_on FROM ' . self::$db->prefix . 'ipaccess_ranges AS r ' . 
+			'JOIN ' . self::$db->prefix . 'ipaccess_orgs AS o ON (o.id = r.org_id) ' . 
+			"WHERE {$ip} BETWEEN `start` AND `end`"
+		);
 
-		if(self::$db->num_rows > 0) {
+		if($ranges) {
+			// Anything expired?
+			foreach($ranges as $range) {
+				if($range->expires_on && $range->expires_on < time()) {
+					return false;
+				}
+			}
+
+			// Nothing expired, so...
 			self::setCookie(self::getIP());
 			return true;
 		}

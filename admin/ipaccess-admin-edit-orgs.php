@@ -37,6 +37,7 @@ if($_GET['org-id']) {
 					'name'          => $_POST['ipaccess-org-name'],
 					'contact_name'  => $_POST['ipaccess-contact-name'],
 					'contact_email' => $_POST['ipaccess-contact-email'],
+					'expires_on'    => $_POST['ipaccess-expire-date'] ? strtotime($_POST['ipaccess-expire-date']) : null,
 				),
 
 				// Where:
@@ -62,6 +63,7 @@ if($_GET['org-id']) {
 		$org['name']          = htmlentities($org['name'],          ENT_QUOTES);
 		$org['contact-name']  = htmlentities($org['contact_name'],  ENT_QUOTES);
 		$org['contact-email'] = htmlentities($org['contact_email'], ENT_QUOTES);
+		$org['expires-on']    = $org['expires_on'] ? date('m/d/Y', $org['expires_on']) : '';
 		
 		$ranges = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}ipaccess_ranges` WHERE `org_id`={$s_id}", ARRAY_A);
 		
@@ -95,7 +97,7 @@ else {
 <script type="text/javascript">
 	jQuery(document).ready(function(){
 		jQuery('#ipaccess-expire-date').datepicker({
-			dateFormat : 'mm-dd-yy'
+			dateFormat : 'mm/dd/yy'
 		});
 	});
 </script>
@@ -125,7 +127,7 @@ else {
 				
 				<li>
 					<label for="ipaccess-expire-date">Expiration Date: </label>
-					<input id="ipaccess-expire-date" name="ipaccess-expire-date" type="text" value="<?php echo $org['expire-date']; ?>" maxlength="255" size="50" />
+					<input id="ipaccess-expire-date" name="ipaccess-expire-date" type="text" value="<?php echo $org['expires-on']; ?>" maxlength="255" size="50" />
 				</li>
 			</ul>
 			

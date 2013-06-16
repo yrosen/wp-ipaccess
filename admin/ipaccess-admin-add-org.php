@@ -22,6 +22,7 @@ $org = array(
 	'name'          => htmlentities($_POST['ipaccess-org-name'],      ENT_QUOTES),
 	'contact-name'  => htmlentities($_POST['ipaccess-contact-name'],  ENT_QUOTES),
 	'contact-email' => htmlentities($_POST['ipaccess-contact-email'], ENT_QUOTES),
+	'expire-date'   => htmlentities($_POST['ipaccess-expire-date'], ENT_QUOTES),
 );
 
 // Submit the form?
@@ -51,6 +52,7 @@ if($_POST['submit']) {
 					'name'          => $org['name'],
 					'contact_name'  => $org['contact-name'],
 					'contact_email' => $org['contact-email'],
+					'expires_on'    => $org['expire-date'] ? strtotime($org['expire-date']) : null,
 				)
 			);
 
@@ -70,7 +72,7 @@ if($_POST['submit']) {
 <script type="text/javascript">
 	jQuery(document).ready(function(){
 		jQuery('#ipaccess-expire-date').datepicker({
-			dateFormat : 'mm-dd-yy'
+			dateFormat : 'mm/dd/yy'
 		});
 	});
 </script>

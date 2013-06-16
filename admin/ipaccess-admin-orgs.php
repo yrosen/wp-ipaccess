@@ -31,6 +31,7 @@ else {
 
 		// Make the # of IPs all pretty:
 		$org['number_of_ips'] = number_format_i18n($org['number_of_ips']);
+		$org['expires_on']    = $org['expires_on'] ? date('M d Y', $org['expires_on']) : '<em>N/A</em>';
 
 		$content .= "
 			<tr>
@@ -39,6 +40,7 @@ else {
 				<td>{$org['contact_name']}</td>
 				<td>{$org['contact_email']}</td>
 				<td>{$org['number_of_ips']}</td> 
+				<td>{$org['expires_on']}</td> 
 				<td>
 					<a class=\"icon edit\" href=\"./admin.php?page=ipaccess-admin&amp;action=edit-org&amp;org-id={$org['id']}\" title=\"Edit\">Edit</a> 
 					<a class=\"icon delete\" href=\"./admin.php?page=ipaccess-admin&amp;action=delete-org&amp;org-id={$org['id']}\" title=\"Delete\" onclick=\"return confirm('Are you sure you want to delete this organization? This can not be un-done.');\">Delete</a>
@@ -61,6 +63,7 @@ else {
 				<th>Contact Name</th>
 				<th>Contact E-Mail</th>
 				<th>Number of IPs</th>
+				<th>Expires On</th>
 				<th>Options</th>
 			</tr>
 		</thead>
@@ -72,6 +75,7 @@ else {
 				<th>Contact Name</th>
 				<th>Contact E-Mail</th>
 				<th>Number of IPs</th>
+				<th>Expires On</th>
 				<th>Options</th>
 			</tr>
 		</tfoot>
