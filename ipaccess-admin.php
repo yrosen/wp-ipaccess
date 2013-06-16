@@ -6,7 +6,7 @@
  * @author  Yudi Rosen <yudi42@gmail.com>
  * @license MIT - http://yrosen.mit-license.org/
  * @package IPAccess
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 // First thing we'll do: Create the top-level menu:

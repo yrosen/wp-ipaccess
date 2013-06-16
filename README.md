@@ -73,3 +73,9 @@ Uses icons from the Silk icon set by famfamfam - http://www.famfamfam.com/lab/ic
 BUG REPORTS, FEATURE REQUESTS, ETC
 --------------------------------
 https://github.com/yrosen/wp-ipaccess
+
+
+CHANGELOG
+--------------------------------
+v1.1.1 - Added expiration date support for Orgs
+v1.0.0 - Original release

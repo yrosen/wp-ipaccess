@@ -8,7 +8,7 @@
  * @author  Yudi Rosen <yudi42@gmail.com>
  * @license MIT - http://yrosen.mit-license.org/
  * @package IPAccess
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 register_activation_hook(

@@ -6,14 +6,14 @@
  * @author  Yudi Rosen <yudi42@gmail.com>
  * @license MIT - http://yrosen.mit-license.org/
  * @package IPAccess
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 /*
 Plugin Name: IPAccess
 Description: Manages a list of IPv4 addresses so that content can be shown only to allowed visitors.
 Author: Yudi Rosen
-Version: 1.0.0
+Version: 1.1.0
 Author URI: http://yudirosen.com
 */
 
